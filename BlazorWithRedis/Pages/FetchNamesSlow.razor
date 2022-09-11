@@ -1,0 +1,38 @@
+﻿@page "/fetchSlowData"
+
+<PageTitle>Fetch usernames SLOW</PageTitle>
+
+<h1>Fetch usernames SLOW</h1>
+
+<p>This component demonstrates fetching alot of data slow.</p>
+
+<button class="btn btn-primary" @onclick="LoadData">Load Data</button>
+
+@if (slowData == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>FN</th>
+                <th>LN</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in slowData)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.FirstName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+
+}
