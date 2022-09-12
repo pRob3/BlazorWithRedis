@@ -3,22 +3,25 @@
 <PageTitle>Fetch usernames SLOW</PageTitle>
 
 <h1>Fetch usernames SLOW</h1>
-
 <p>This component demonstrates fetching alot of data slow.</p>
 
 <button class="btn btn-primary" @onclick="LoadData">Load Data</button>
 
-@if (slowData == null)
+@if (slowData is null && loadLocation == "")
 {
+    <p><em>Click the button to load in data</em></p>
+}
+else if(slowData is null){
     <p><em>Loading...</em></p>
 }
 else
 {
+    <div class="h3 @isCacheData">@loadLocation</div>
     <table class="table">
         <thead>
             <tr>
-                <th>FN</th>
-                <th>LN</th>
+                <th>First Name</th>
+                <th>Last Name</th>
             </tr>
         </thead>
         <tbody>
@@ -31,8 +34,4 @@ else
             }
         </tbody>
     </table>
-}
-
-@code {
-
 }
